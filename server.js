@@ -3,9 +3,9 @@ const path = require('path');
 const session = require('express-session');
 const mysql = require("mysql")
 const connection = mysql.createConnection({
-	host     : 'localhost',
-	user     : 'root',
-	password : 'password',
+	host     : 'bbvkapojajjiuiwc8nvs-mysql.services.clever-cloud.com',
+	user     : 'bbvkapojajjiuiwc8nvs',
+	password : 'dmAxHdAydDkv1gzutxsu',
 	database : 'teamwebsite'
 });
 
