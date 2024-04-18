@@ -3,10 +3,10 @@ const path = require('path');
 const session = require('express-session');
 const mysql = require("mysql")
 const connection = mysql.createConnection({
-	host     : 'bbvkapojajjiuiwc8nvs-mysql.services.clever-cloud.com',
-	user     : 'bbvkapojajjiuiwc8nvs',
-	password : 'dmAxHdAydDkv1gzutxsu',
-	database : 'bbvkapojajjiuiwc8nvs'
+	host     : 'sql3.freemysqlhosting.net',
+	user     : 'sql3700025',
+	password : '8aJtGsW9j1',
+	database : 'sql3700025'
 });
 
 connection.connect(function(err) {
