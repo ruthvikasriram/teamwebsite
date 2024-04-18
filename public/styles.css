@@ -1,0 +1,182 @@
+body {
+    margin: 0
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-image: url('images/headercar.jpg');
+    color: #fff;
+}
+
+header img {
+    width: 150px; 
+    height: 100px;
+}
+
+nav {
+    display: flex; /* Add this */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 10px 20px; 
+    border-radius: 5px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #6f2232;
+    background-color: blanchedalmond;
+}
+
+nav a:active,
+nav a.selected {
+    color: #ff0000; /* Change to your desired color */
+}
+
+.main-car{
+    margin: 50px;
+    margin-top: 20px;
+}
+.main-car img{
+    width: 100%;
+}
+
+.welcome {
+    text-align: center;
+}
+
+.welcome h1{
+    color: purple;
+}
+
+.welcome p {
+    margin-bottom: 20px; /* Increase spacing between paragraphs */
+    font-size: 18px; /* Increase font size for better readability */
+    line-height: 1.5; /* Increase line height for better spacing */
+    color: #444; /* Set paragraph text color */
+}
+
+.footer-section {
+    background-image: url('images/headercar.jpg');
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+    height: 100px;
+}
+
+.image-description-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+
+.description-container {
+    flex: 1;
+    margin: 20px;
+    text-align: center;
+}
+
+.description-container h2 {
+    color: purple; /* Set description title color */
+}
+
+.description-container p {
+    font-size: 16px; /* Set font size for description */
+    color: #666; /* Set color for description text */
+}
+
+/* Apply styles to the carousel */
+.hero-section {
+    margin-top: 20px;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .carousel-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .carousel-slide {
+    display: flex;
+    width: 300%; /* Adjusted width for three images */
+    transition: transform 0.5s ease; /* Smooth transition */
+    transform: translateX(0); /* Start with the first image */
+  }
+  
+  .carousel-slide img {
+    width: 100%; /* Ensure each image fills the container width */
+    height: 100%; /* Allow the height to adjust according to the aspect ratio */
+    max-width: 100%; /* Ensure the image does not exceed the container width */
+    max-height: 100%; /* Ensure the image does not exceed the container height */
+    object-fit: cover; /* Handle different aspect ratios while maintaining the image's aspect ratio */
+  }
+  
+  
+  .carousel-arrows {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  
+  .arrow {
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 50%;
+  }
+  
+  .carousel-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .dot.active {
+    background-color: #ff6f61; /* Change the color of the active dot */
+  }
+
+  

@@ -1,0 +1,78 @@
+body {
+    margin: 0
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-image: url('../images/headercar.jpg');
+    color: #fff;
+}
+
+header img {
+    width: 150px; 
+    height: 100px;
+}
+
+nav {
+    display: flex; /* Add this */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 10px 20px; 
+    border-radius: 5px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #6f2232;
+    background-color: blanchedalmond;
+}
+
+nav a:active,
+nav a.selected {
+    color: #ff0000; /* Change to your desired color */
+}
+
+.footer-section {
+    background-image: url('../images/headercar.jpg');
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+    height: 100px;
+}
+
+.image-description-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+
+.description-container {
+    flex: 1;
+    margin: 20px;
+    text-align: center;
+}
+
+.description-container h2 {
+    color: purple; /* Set description title color */
+}
+
+.description-container p {
+    font-size: 16px; /* Set font size for description */
+    color: #666; /* Set color for description text */
+}

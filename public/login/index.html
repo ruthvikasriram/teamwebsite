@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <img src="../images/driveSure.png" alt="Company Logo">
+        <nav>
+            <div><a href="../index.html">Home</a></div>
+            <div><a href="../about/index.html">About</a></div>
+            <div><a href="../estimation/index.html">Estimation</a></div>
+            <div><a href="../contact/index.html">Contact</a></div>
+            <div><a href="index.html" class="selected">Login</a></div>
+        </nav>
+    </header>
+
+    <!-- Form Section -->
+    <section class="form-section">
+        <h2>Login</h2>
+        <form action="/auth" method="post" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <div id="email-error" class="error-message"></div> <!-- Error message for email -->
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <div id="password-error" class="error-message"></div> <!-- Error message for password -->
+            </div>
+            <div class="form-group">
+                <button type="submit">Login</button>
+                <button type="button" onclick="redirectToSignup()">Signup</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <p>Email: info@vehicleinsurance.com</p>
+        <p>Phone: (928) 221 1234</p>
+    </footer>
+
+    <!-- JavaScript to handle the redirection and form validation -->
+    <script>
+        function redirectToSignup() {
+            // Redirect to the signup form page
+            window.location.href = '../signup/index.html';
+        }
+
+        function validateForm() {
+            var valid = true;
+
+            // Validate email
+            var email = document.getElementById("email").value;
+            var emailError = document.getElementById("email-error");
+            if (!email || !email.includes("@")) {
+                emailError.textContent = "Please enter a valid email address.";
+                valid = false;
+            } else {
+                emailError.textContent = ""; // Clear error message
+            }
+
+            // Validate password
+            var password = document.getElementById("password").value;
+            var passwordError = document.getElementById("password-error");
+            if (!password || password.length < 6) {
+                passwordError.textContent = "Please enter a password with at least 6 characters.";
+                valid = false;
+            } else {
+                passwordError.textContent = ""; // Clear error message
+            }
+
+            // If form is valid and user is logged in, redirect to estimation page
+            if (valid && request.session.loggedin) {
+                window.location.href = '../estimation/index.html';
+            }
+
+            return false; // Prevent form submission
+}
+    </script>
+</body>
+
+</html>

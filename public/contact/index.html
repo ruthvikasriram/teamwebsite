@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .error-message {
+            color: red;
+        }
+    </style>
+    <script>
+        function submitForm() {
+            // Validate phone number
+            var phoneNumber = document.getElementById("phone").value;
+            var errorMessage = document.getElementById("phone-error");
+            if (!/^\d+$/.test(phoneNumber)) {
+                errorMessage.textContent = "Please enter a valid phone number containing only digits.";
+                return false; // Prevent form submission
+            } else {
+                errorMessage.textContent = ""; // Clear error message
+            }
+
+            // Display success message
+            var successMessage = document.getElementById("success-message");
+            successMessage.innerHTML = "Thanks for contacting us! Our team will connect with you shortly to resolve your queries.";
+
+            // Clear form data
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("description").value = "";
+
+            return false; // Prevent form submission
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <img src="../images/driveSure.png" alt="Company Logo">
+        <nav>
+            <div><a href="../index.html">Home</a></div>
+            <div><a href="../about/index.html">About</a></div>
+            <div><a href="../estimation/index.html">Estimation</a></div>
+            <div><a href="index.html" class="selected">Contact</a></div>
+            <div><a href="../login/index.html">Login</a></div>
+        </nav>
+    </header>
+
+    <!-- Form Section -->
+    <section class="form-section">
+        <h2>Contact Us</h2>
+        <section class="image-section">
+            <img src="../images/Contact.jpg" alt="Image Description">
+        </section>
+        <form action="#" method="post" onsubmit="return submitForm()">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <div id="phone-error" class="error-message"></div> <!-- Error message for phone number -->
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Contact Us</button>
+            </div>
+        </form>
+        <div id="success-message" style="color: green; margin-top: 10px;"></div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <p>Email: info@vehicleinsurance.com</p>
+        <p>Phone: (928) 221 1234</p>
+    </footer>
+</body>
+
+</html>

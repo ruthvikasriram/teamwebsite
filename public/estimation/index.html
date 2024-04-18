@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <img src="../images/driveSure.png" alt="Company Logo">
+        <nav>
+            <div><a href="../index.html">Home</a></div>
+            <div><a href="../about/index.html">About</a></div>
+            <div><a href="index.html">Estimation</a></div>
+            <div><a href="../contact/index.html">Contact</a></div>
+            <div><a href="../login/index.html" class="selected">Login</a></div>
+        </nav>
+    </header>
+
+    <!-- Form Section -->
+    <section class="form-section">
+        <h2>Vehicle Insurance Estimation</h2>
+        <form action="#" method="post" onsubmit="return showEstimation()">
+            <div class="form-group">
+                <label for="vehicle-type">Choose the type of Vehicle:</label>
+                <select id="vehicle-type" name="vehicle-type" required>
+                    <option value="">Select</option>
+                    <option value="two-wheeler">Two Wheeler</option>
+                    <option value="four-wheeler">Four Wheeler</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="vehicle-company">Vehicle Company Name:</label>
+                <input type="text" id="vehicle-company" name="vehicle-company" required>
+            </div>
+            <div class="form-group">
+                <label for="vehicle-model">Vehicle Model:</label>
+                <input type="text" id="vehicle-model" name="vehicle-model" required>
+            </div>
+            <div class="form-group">
+                <label for="vehicle-cost">Vehicle Cost:</label>
+                <input type="number" id="vehicle-cost" name="vehicle-cost" required>
+            </div>
+            <div class="form-group">
+                <label for="registration-year">Registration Year:</label>
+                <input type="number" id="registration-year" name="registration-year" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+            <div class="form-group">
+                <label for="car-insurance-agents">Car Insurance Agents:</label>
+                <select id="car-insurance-agents" name="car-insurance-agents" required>
+                    <option value="">Select</option>
+                    <option value="direct-company">Direct Company</option>
+                    <option value="third-party">Third Party Services</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="vehicle-damage">Vehicle Damage:</label>
+                <select id="vehicle-damage" name="vehicle-damage" required>
+                    <option value="">Select</option>
+                    <option value="wheel-damage">Wheel Damage</option>
+                    <option value="front-mirror-damage">Front Mirror Damage</option>
+                    <option value="back-lights-damage">Back Lights Damage</option>
+                    <option value="seats-damage">Seats Damage</option>
+                    <option value="dent-issue">Dent Issue</option>
+                    <option value="full-car-damage">Full Vehicle Damage</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit">Proceed</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Estimation Section -->
+    <section class="estimation-section" style="display: none;">
+        <h2>Vehicle Insurance Estimation</h2>
+        <div>
+            <h3>Top offers provided by other companies</h3>
+            <div class="insurance-offers">
+                <div class="insurance-offer">
+                    <img src="../images/insurance1.jpg" alt="Bajaj Allianz">
+                    <p></p>
+                </div>
+                <div class="insurance-offer">
+                    <img src="../images/insurance2.jpg" alt="Oriental Insurance">
+                    <p></p>
+                </div>
+                <div class="insurance-offer">
+                    <img src="../images/insurance3.jpg" alt="HDFC Ergo">
+                    <p></p>
+                </div>
+                <div class="insurance-offer">
+                    <img src="../images/insurance4.jpg" alt="TATA AIG">
+                    <p></p>
+                </div>
+                <div class="insurance-offer">
+                    <img src="../images/insurance5.jpg" alt="Reliance General Insurance">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <div class="finalCost">
+            <p>The Estimation of your insurance will be like Rs. 2,660.67</p>
+            <button onclick="goBack()">Return to Estimation</button>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <p>Email: info@vehicleinsurance.com</p>
+        <p>Phone: (928) 221 1234</p>
+    </footer>
+
+    <!-- JavaScript to show the estimation section -->
+    <script>
+        function showEstimation() {
+            // Prevent form submission
+            event.preventDefault();
+
+            // Get the vehicle cost entered by the user
+            var vehicleCost = parseInt(document.getElementById("vehicle-cost").value);
+
+            var vehicleDamage = document.getElementById("vehicle-damage").value;
+
+            console.log('vehicleDamage', vehicleDamage);
+            // Calculate the estimated insurance offers
+
+            if(vehicleDamage == 'wheel-damage') {
+                var offers = [88, 85, 82, 84, 80];
+            } else if(vehicleDamage == 'front-mirror-damage') {
+                var offers = [92, 94, 91, 88, 90];
+            } else if (vehicleDamage == 'back-lights-damage') {
+                var offers = [90, 95, 88, 83, 86];
+            } else if (vehicleDamage  == 'seats-damage') {
+                var offers = [95, 92, 87, 85, 89];
+            } else if (vehicleDamage == 'dent-issue') {
+                var offers = [81, 84, 86, 79, 88];
+            } else {
+                var offers = [70, 65, 68, 63, 66];
+            }
+            
+            var updatedCosts = [];
+
+            // Calculate updated costs
+            for (var i = 0; i < offers.length; i++) {
+                updatedCosts.push(vehicleCost - ((vehicleCost * offers[i]) / 100));
+            }
+
+            // Find the minimum value from updatedCosts array
+            var minCost = Math.min(...updatedCosts);
+
+            // Show the estimation section
+            var estimationSection = document.querySelector(".estimation-section");
+            estimationSection.style.display = "block";
+
+            // Update the offer values in the HTML
+            var insuranceOffers = document.querySelectorAll(".insurance-offers .insurance-offer p");
+            for (var i = 0; i < insuranceOffers.length; i++) {
+                insuranceOffers[i].textContent = "$ " + updatedCosts[i].toFixed(2);
+            }
+
+            // Update the minimum value in the finalCost paragraph
+            var finalCostParagraph = document.querySelector(".finalCost p");
+            finalCostParagraph.textContent = "The Estimation of your insurance will be like $ " + minCost.toFixed(2);
+
+            // Scroll to the estimation section
+            estimationSection.scrollIntoView({ behavior: "smooth" });
+
+            // Return false to prevent form submission
+            return false;
+        }
+
+        function goBack() {
+            // Hide the estimation section
+            var estimationSection = document.querySelector(".estimation-section");
+            estimationSection.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

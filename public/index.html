@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <img src="images/driveSure.png" alt="Company Logo">
+        <nav>
+            <div><a href="index.html" class="selected">Home</a></div>
+            <div><a href="about/index.html">About</a></div>
+            <div><a href="estimation/index.html">Estimation</a></div>
+            <div><a href="contact/index.html">Contact</a></div>
+            <div><a href="login/index.html">Login</a></div>
+        </nav>
+    </header>
+    <!-- <div class="main-car">
+        <img src="images/Welcome.jpg" alt="cars">
+    </div> -->
+    <!-- New section with image carousel -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img src="images/homeimage-1.jpg" alt="Slide 1">
+                    <img src="images/homeimage-2.jpg" alt="Slide 2">
+                    <img src="images/homeimage-4.jpg" alt="Slide 3">
+                </div>
+                <div class="carousel-arrows">
+                    <div class="arrow prev">&#9664;</div> <!-- Left arrow -->
+                    <div class="arrow next">&#9654;</div> <!-- Right arrow -->
+                </div>
+                
+                <div class="carousel-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="welcome">
+        <h1>Welcome to our Vehicle Insurance Estimation Service</h1>
+        <p>We are dedicated to providing comprehensive insurance
+            coverage for all types of vehicles, ensuring our customers enjoy peace of mind on the road. At our company,
+            we
+            prioritize customer satisfaction and safety above all else. Our team of experienced professionals works
+            tirelessly to tailor insurance solutions that meet the unique needs of each individual client.
+            With a commitment to transparency and reliability, we offer accurate estimations for insurance premiums,
+            including coverage options for two-wheelers and four-wheelers. Our goal is to empower our customers with the
+            knowledge and protection they need to navigate life's journeys confidently.
+        </p>
+    </section>
+
+    <!-- New Section with Image and Description -->
+    <section class="image-description-section">
+        <div class="image-container">
+            <img src="images/Home.jpg" alt="Image Description">
+        </div>
+        <div class="description-container">
+            <h2>Four Wheeler Insurance</h2>
+            <p>Four-wheeler insurance provides comprehensive coverage against various risks including accidents, theft,
+                and natural disasters. It includes third-party liability cover and personal accident cover for the
+                insured and passengers. Additional benefits include add-on covers for enhanced protection, discounts
+                through No Claim Bonus, cashless claim settlement, and legal compliance. Overall, it offers financial
+                security, peace of mind, and convenience for vehicle owners.</p>
+        </div>
+    </section>
+
+    <section class="image-description-section">
+        <div class="description-container">
+            <h2>Two Wheeler Insurance</h2>
+            <p>Two-wheeler insurance provides financial protection against damages to your motorcycle or scooter due to
+                accidents, theft, natural disasters, and man-made calamities. It also covers legal liabilities arising
+                from third-party injuries or property damage. Additional benefits include personal accident cover,
+                add-on options like roadside assistance, and incentives like No Claim Bonus for safe driving. Having
+                two-wheeler insurance ensures legal compliance, peace of mind, and a hassle-free claim settlement
+                process, making it an essential investment for motorcycle and scooter owners.</p>
+        </div>
+        <div class="image-container">
+            <img src="images/Bikes4.jpg" alt="Image Description">
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <p>Email: info@vehicleinsurance.com</p>
+        <p>Phone: (928) 221 1234</p>
+        </div>
+
+        </div>
+    </footer>
+    <script>
+        const carouselSlide = document.querySelector('.carousel-slide');
+        const carouselImages = document.querySelectorAll('.carousel-slide img');
+    
+        // Buttons
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+    
+        // Counter - set initial value to 0
+        let counter = 0;
+        const size = carouselImages[0].clientWidth;
+    
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    
+        // Button listeners
+        nextBtn.addEventListener('click', () => {
+            if (counter >= carouselImages.length - 1) return;
+            carouselSlide.style.transition = 'transform 0.3s ease-in-out';
+            counter++;
+            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+        });
+    
+        prevBtn.addEventListener('click', () => {
+            if (counter <= 0) return;
+            carouselSlide.style.transition = 'transform 0.3s ease-in-out';
+            counter--;
+            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+        });
+    
+        carouselSlide.addEventListener('transitionend', () => {
+            if (carouselImages[counter].id === 'lastClone') {
+                carouselSlide.style.transition = 'none';
+                counter = carouselImages.length - 2;
+                carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+            }
+            if (carouselImages[counter].id === 'firstClone') {
+                carouselSlide.style.transition = 'none';
+                counter = carouselImages.length - counter;
+                carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+            }
+        });
+    </script>
+    
+</body>
+
+</html>
