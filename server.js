@@ -6,7 +6,7 @@ const connection = mysql.createConnection({
 	host     : 'bbvkapojajjiuiwc8nvs-mysql.services.clever-cloud.com',
 	user     : 'bbvkapojajjiuiwc8nvs',
 	password : 'dmAxHdAydDkv1gzutxsu',
-	database : 'teamwebsite'
+	database : 'bbvkapojajjiuiwc8nvs'
 });
 
 connection.connect(function(err) {
